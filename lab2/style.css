@@ -1,0 +1,166 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+td {
+    padding: 10px;
+    height: 60px;
+    border: 2px solid black;
+}
+
+.row1 {
+    background-color: #048f8f;
+    color: #000000;
+}
+
+.row1:hover {
+    background-color: #f5f504;
+    color: #0007c7;
+}
+
+.row2 {
+    background-color: #f5f504;
+    color: #0007c7;
+}
+
+.row2:hover {
+    background-color: #048f8f;
+    color: #000000;
+}
+
+
+
+:root {
+    --container-size: 600px; /* коментарі далі будуються саме на числі 600 */
+    --border-size: calc(var(--container-size) / 9); /* 66,66px */
+    --final-size: calc(var(--container-size) * 5 / 6); /* 500px */
+}
+
+.target-position {
+    position: relative;
+    width: var(--container-size);
+    height: var(--container-size);
+    margin: 20px;
+    border: 1px dashed #ccc; /* Для наочності */
+}
+
+.target-position .big-circle {
+    position: absolute;
+    width: calc(var(--final-size) - 2 * var(--border-size));
+    height: calc(var(--final-size) - 2 * var(--border-size));
+    border-radius: 50%;
+    border: calc(var(--container-size) / 9) solid black;
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+}
+
+.target-position .v-line {
+    position: absolute;
+    width: calc(var(--container-size) / 30);
+    height: 100%;
+    left: 50%;
+    translate: -50% 0;
+    background: black;
+    z-index: 2;
+}
+
+.target-position .h-line {
+    position: absolute;
+    height: calc(var(--container-size) / 30);
+    width: 100%;
+    top: 50%;
+    translate: 0 -50%;
+    background: black;
+    z-index: 2;
+}
+
+.target-position .center-circle {
+    position: absolute;
+    width: calc(var(--container-size) * 0.3);
+    height: calc(var(--container-size) * 0.3);
+    border-radius: 50%;
+    background: black;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 3;
+}
+
+
+
+.target-transform {
+    width: var(--container-size);
+    height: var(--container-size);
+    margin: 20px auto;
+    border: 1px dashed #ccc;
+    display: grid;
+}
+
+.target-transform .big-circle,
+.target-transform .v-line,
+.target-transform .h-line,
+.target-transform .center-circle {
+    grid-area: 1 / 1;
+}
+
+.target-transform .big-circle {
+    width: calc(var(--final-size) - 2 * var(--border-size));
+    height: calc(var(--final-size) - 2 * var(--border-size));
+    border-radius: 50%;
+    border: calc(var(--container-size) / 9) solid black;
+    background: transparent;
+    transform: translate(10%, 10%);
+    /* 10% тому що зсув = (600-500)/2 = 50, що є 10% від final-size*/
+}
+
+.target-transform .v-line {
+    width: calc(var(--container-size) / 30);
+    height: 100%;
+    background: black;
+    transform: translateX(calc((var(--container-size) - (var(--container-size) / 30)) / 2));
+}
+
+.target-transform .h-line {
+    width: 100%;
+    height: calc(var(--container-size) / 30);
+    background: black;
+    transform: translateY(calc((var(--container-size) - (var(--container-size) / 30)) / 2));
+}
+
+.target-transform .center-circle {
+    width: calc(var(--container-size) * 0.3);
+    height: calc(var(--container-size) * 0.3);
+    border-radius: 50%;
+    background: black;
+    transform: translate(116.67%, 116.67%);
+    /* 116.67% тому що круг виходить діаметром 180px, що складає  */
+}
+
+
+
+.figures-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.figure-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 50px;
+}
+
+.figure-wrap h3 {
+    font-size: 36px;
+    margin: 0;
+    text-align: center;
+}
