@@ -144,3 +144,54 @@ function escapeHtml(str) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
+
+
+
+const tableBox = document.getElementById("tableBox");
+const colorPicker = document.getElementById("colorPicker");
+
+const table = document.createElement("table");
+let number = 1;
+
+for (let i = 0; i < 6; i++) {
+    const row = document.createElement("tr");
+    for (let j = 0; j < 6; j++) {
+        const cell = document.createElement("td");
+        cell.textContent = number;
+        cell.dataset.num = number;
+        number++;
+        row.appendChild(cell);
+    }
+    table.appendChild(row);
+}
+tableBox.appendChild(table);
+
+function randomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+}
+
+table.querySelectorAll("td").forEach(cell => {
+    const num = Number(cell.dataset.num);
+
+    cell.addEventListener("mouseenter", () => {
+        if (num === 4) {
+            cell.style.background = randomColor();
+            cell.style.color = randomColor();
+        }
+    });
+
+    cell.addEventListener("click", () => {
+        if (num ===4) {
+            cell.style.background = colorPicker.value;
+        }
+    });
+
+    cell.addEventListener("dblclick", () => {
+        if(num === 4) {
+            const rows = table.rows;
+            for (let r = 0; r < 6; r++) {
+                rows[r].cells[5 - r].style.background = colorPicker.value;
+            }
+        }
+    });
+});
