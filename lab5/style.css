@@ -1,0 +1,64 @@
+:root{
+    --bg: #f6f7fb;
+    --accent: #2b7be4;
+    --card: #ffffff;
+    --err: #d9534f;
+}
+
+
+.error {
+    border: 2px solid red;
+}
+
+.success {
+    border: 2px solid green;
+}
+
+
+*{box-sizing:border-box}
+body{
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color:#222;
+    padding:20px;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    background:var(--card);
+    padding:24px;
+    border-radius:8px;
+    box-shadow:0 6px 20px rgba(20,30,40,0.06);
+}
+
+h1{margin-top:0}
+
+label{display:block;margin-top:12px;font-weight:600}
+
+input[type="text"], input[type="email"], input:not([type]){
+    width:100%;
+    padding:10px 12px;
+    margin-top:6px;
+    border:1px solid #cfd8e3;
+    border-radius:6px;
+    font-size:15px;
+}
+.hint{font-size:13px;color:#6b7280;margin-top:6px}
+.actions{margin-top:18px;display:flex;gap:8px}
+button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+button.reset{background:#e0e6ef;color:#0b1320}
+
+
+input.error{border-color:var(--err);box-shadow:0 0 0 3px rgba(217,83,79,0.06)}
+#error{color:var(--err)}
+.error-line{background:#fff3f3;border-left:4px solid var(--err);padding:8px;margin-top:8px;border-radius:6px}
+.note{font-weight:700;margin-bottom:8px}
+
+
+input.success {
+    border-color: green;
+    box-shadow: 0 0 0 3px rgba(0,128,0,0.1);
+}
+
+
+@media (max-width:520px){.container{padding:16px}}

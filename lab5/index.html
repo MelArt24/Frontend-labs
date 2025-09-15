@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Форма — Перевірка через RegExp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+    <h1>Реєстраційна форма</h1>
+
+
+    <form id="studentForm" novalidate>
+        <label for="fullName">ПІБ (формат: Прізвище І. О.)</label>
+        <input id="fullName" name="fullName" placeholder="Петренко П. І." />
+        <div class="hint">Наприклад: Петренко П. І.</div>
+
+
+        <label for="idcard">ID-Card (формат: ТТ №ЧЧЧЧЧЧ)</label>
+        <input id="idcard" name="idcard" placeholder="AB №123456" />
+        <div class="hint">Наприклад: АВ №123456</div>
+
+
+        <label for="faculty">Факультет (чотири літери)</label>
+        <input id="faculty" name="faculty" placeholder="ФІТ" />
+        <div class="hint">Рівно 4 літери (латиницею або кирилицею)</div>
+
+
+        <label for="dob">Дата народження (формат: ДД.ММ.РРРР)</label>
+        <input id="dob" name="dob" placeholder="31.12.1999" />
+        <div class="hint">Наприклад: 01.09.2000</div>
+
+
+        <label for="address">Адреса (формат: м. НазваМіста)</label>
+        <input id="address" name="address" placeholder="м. Київ" />
+        <div class="hint">Наприклад: м. Харків</div>
+
+
+        <div class="actions">
+            <button type="submit">Перевірити та Відправити</button>
+            <button type="reset" class="reset">Очистити</button>
+        </div>
+    </form>
+
+
+    <div id="errors" aria-live="polite"></div>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
