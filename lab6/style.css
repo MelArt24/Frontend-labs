@@ -1,0 +1,59 @@
+:root {
+    --accent: #2b7be4;
+    --card: #2a2a2a;
+    --muted: #ccc;
+}
+.top{
+    background:#ccc;
+    color:#111;
+    text-align:center;
+    padding:8px 12px;
+    position:sticky;
+    top:0;
+}
+.top h1{ margin:6px 0; font-weight:600; color:#222 }
+.top .download{ position:absolute; left:50%; transform:translateX(-50%); top:6px }
+
+
+.wrapper{ max-width:1200px; margin:18px auto; padding:8px }
+.controls{ display:flex; gap:8px; align-items:center; justify-content:flex-end; margin-bottom:12px }
+.controls button{ padding:8px 12px; border-radius:6px; border:0; cursor:pointer; background:var(--accent); color:white }
+.controls select{ padding:6px }
+
+
+.cards{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.card{
+    background:var(--card);
+    color:white;
+    width:220px;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 6px 14px rgba(0,0,0,0.25);
+    display:flex;
+    flex-direction:column;
+}
+.card .photo{
+    height:140px;
+    background-position:center;
+    background-size:cover;
+}
+.card .info{
+    padding:12px;
+    font-size:13px;
+    line-height:1.4;
+}
+.info .label{ color:var(--muted); font-size:12px }
+.info p{ margin:8px 0 }
+
+
+@media (max-width:640px){
+    .card{ width:calc(50% - 16px) }
+}
+@media (max-width:420px){
+    .card{ width:100% }
+}
