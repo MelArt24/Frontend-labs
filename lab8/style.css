@@ -504,6 +504,14 @@ footer {
     .hero-img {
         margin-top: 20px;
     }
+
+    .hero-img-caption {
+        position: static;
+        margin: 20px auto 0 auto;
+        max-width: 90%;
+        box-shadow: 0 8px 20px rgba(7,16,58,0.15);
+    }
+
     .hero-img-gray-rect {
         display: none;
     }
